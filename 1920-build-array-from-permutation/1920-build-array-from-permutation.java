@@ -1,16 +1,13 @@
 class Solution {
     public int[] buildArray(int[] nums) {
-        // base case
-        if(nums.length == 0){
-            return nums;
+     int n = nums.length;
+        for(int i = 0; i < n; ++i){
+            nums[i] += n * (nums[nums[i]] % n);
         }
-        
-        int length = nums.length;
-        int[] result = new int[length];
-        for(int i=0; i<length; i++){
-            result[i] = nums[nums[i]];
+
+        for(int i = 0; i < n; ++i){
+            nums[i] /= n;
         }
-        
-        return result;
+        return nums;
     }
 }
