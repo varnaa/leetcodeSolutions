@@ -7,7 +7,7 @@ class Solution {
         
         int maxWords = Integer.MIN_VALUE;
         for(String sentence: sentences){
-            sentence = sentence.strip();
+            sentence = sentence.trim();
             maxWords = Math.max(maxWords, sentence.split(" ").length);
         }
         
